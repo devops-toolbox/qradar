@@ -1,0 +1,44 @@
+---
+# vars file for packages
+
+# Detected OS
+my_os: "{{ ansible_distribution }}_{{ ansible_distribution_major_version }}"
+
+# Repos create
+qradar_repos_create: "{{ _qradar_repos_create['all']
+  | union ( _qradar_repos_create[my_os]
+  | default([]) ) }}"
+
+# Repos download
+qradar_repos_download: "{{ _qradar_repos_download['all']
+  | union ( _qradar_repos_download[my_os]
+  | default([]) ) }}"
+
+# Templates Copy
+qradar_templates_copy: "{{ _qradar_templates_copy['all']
+  | union ( _qradar_templates_copy[my_os]
+  | default([]) ) }}"
+
+# Services Enable
+qradar_services_enable: "{{ _qradar_services_enable['all']
+  | union ( _qradar_services_enable[my_os]
+  | default([]) ) }}"
+
+# SELinux Enable
+qradar_selinux_enable: "{{ _qradar_selinux_enable['all']
+  | union ( _qradar_selinux_enable[my_os]
+  | default([]) ) }}"
+
+# Packages lists
+qradar_packages_remove: "{{ _qradar_packages_remove['all']
+  | union ( _qradar_packages_remove[my_os]
+  | default([]) ) }}"
+qradar_packages_repos: "{{ _qradar_packages_repos['all']
+  | union ( _qradar_packages_repos[my_os]
+  | default([]) ) }}"
+qradar_packages_prereq: "{{ _qradar_packages_prereq['all']
+  | union ( _qradar_packages_prereq[my_os]
+  | default([]) ) }}"
+qradar_packages_install: "{{ _qradar_packages_install['all']
+  | union ( _qradar_packages_install[my_os]
+  | default([]) ) }}"

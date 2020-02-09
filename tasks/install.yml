@@ -1,0 +1,27 @@
+---
+# Install qradar packages
+
+- name: unwanted packages are removed
+  package:
+    name: "{{ qradar_packages_remove }}"
+    state: absent
+  become: true
+  when: qradar_remove_packages
+
+- name: prereq repositories are installed
+  package:
+    name: "{{ qradar_packages_repos }}"
+    state: "{{ qradar_packages_state }}"
+  become: true
+
+- name: prereq packages are installed
+  package:
+    name: "{{ qradar_packages_prereq }}"
+    state: "{{ qradar_packages_state }}"
+  become: true
+
+- name: packages are installed
+  package:
+    name: "{{ qradar_packages_install }}"
+    state: "{{ qradar_packages_state }}"
+  become: true

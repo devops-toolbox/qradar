@@ -1,0 +1,10 @@
+---
+# Template configuration files for qradar
+
+- name: template is copied
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  become: true
+  loop: "{{ qradar_templates_copy }}"
+  when: qradar_copy_templates
