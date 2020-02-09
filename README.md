@@ -8,10 +8,10 @@ qradar: Qradar
 Ansible galaxy:
 ---------------
 
-[https://galaxy.ansible.com/devops-toolbox.qradar](https://galaxy.ansible.com/devops-toolbox.qradar)
+[https://galaxy.ansible.com/devopstoolbox.qradar](https://galaxy.ansible.com/devopstoolbox.qradar)
 
 ```bash
-ansible-galaxy install devops-toolbox.qradar
+ansible-galaxy install devopstoolbox.qradar
 ```
 
 Requirements
@@ -60,7 +60,7 @@ Example Playbook
   tasks:
     - name: qradar is configured
       import_role:
-        name: devops-toolbox.qradar
+        name: devopstoolbox.qradar
       vars:
         qradar_packages_state: present
         qradar_remove_packages: true
@@ -89,4 +89,4 @@ MIT
 Author Information
 ------------------
 
-- [Mihai Criveti](https://www.linkedin.com/in/devops-toolbox.)
+- [Mihai Criveti](https://www.linkedin.com/in/devopstoolbox.)
